@@ -27880,7 +27880,12 @@ page-ozgecmis-detay button.lighter {
   opacity: 0.4;
 }
 
-page-ozgecmis-detay .profile-image {
+page-ozgecmis-detay .profile-image-wrapper {
+  text-align: center;
+  margin: 20px 0;
+}
+
+page-ozgecmis-detay .profile-image-wrapper .profile-image {
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -27888,6 +27893,21 @@ page-ozgecmis-detay .profile-image {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+page-ozgecmis-detay .profile-image-wrapper .profile-image-placeholder {
+  display: inline-block;
+  background-color: #eee;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+page-ozgecmis-detay .profile-image-wrapper .profile-image-placeholder ion-icon {
+  font-size: 44px;
+  margin-bottom: -10px;
+  margin-top: 10px;
 }
 
 page-ozgecmis-detay .profile-image1 {
