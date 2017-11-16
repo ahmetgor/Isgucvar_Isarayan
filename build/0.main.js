@@ -49,7 +49,7 @@ var SonucPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filtrele_filtrele__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filtrele_filtrele__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_basvuru_ser__ = __webpack_require__(108);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(36);
@@ -76,7 +76,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var SonucPage = /** @class */ (function () {
     // infiniteScroll:any;
-    // {id: number, isim: string, firma: string, açıklama: string, il: string, tip:string, eğitim: string, tecrübe: string, ehliyet: string, askerlik: string, görüntülenme: string, başvuru: string, olusturan:string, olusurmaTarih:string, guncelleyen:string, guncellemeTarih:string }>;
     function SonucPage(navCtrl, navParams, ilanSer, modalCtrl, basvuruSer, events, authService) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
@@ -186,16 +185,6 @@ var SonucPage = /** @class */ (function () {
     //   //   })
     // }
     SonucPage.prototype.presentFilter = function (myEvent) {
-        // let modal = this.modalCtrl.create(FiltrelePage, {
-        //   detayAra: this.detayAra,
-        //   sirala: this.sirala
-        //   });
-        //
-        // console.log('Dismiss started');
-        //
-        // modal.present({
-        //   ev: myEvent
-        // });
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__filtrele_filtrele__["a" /* FiltrelePage */], {
             detayAra: this.detayAra,
             sirala: this.sirala
