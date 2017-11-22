@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 303:
+/***/ 286:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SonucPageModule", function() { return SonucPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sonuc__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sonuc__ = __webpack_require__(291);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,20 +41,20 @@ var SonucPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 308:
+/***/ 291:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SonucPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filtrele_filtrele__ = __webpack_require__(223);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__filtrele_filtrele__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_forms__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_basvuru_ser__ = __webpack_require__(108);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_auth__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_debounceTime__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_basvuru_ser__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__login_login__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__providers_user_auth__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_debounceTime__ = __webpack_require__(295);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_debounceTime___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_rxjs_add_operator_debounceTime__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -93,7 +93,7 @@ var SonucPage = /** @class */ (function () {
         this.isEmpty = false;
         this.searchControl = new __WEBPACK_IMPORTED_MODULE_4__angular_forms__["e" /* FormControl */]();
         // this.getBasvuru();
-        console.log('constructor SonucPage çağrıldı');
+        //console.log('constructor SonucPage çağrıldı');
     }
     SonucPage.prototype.ionViewDidLoad = function () {
         var _this = this;
@@ -105,16 +105,16 @@ var SonucPage = /** @class */ (function () {
         }
         this.basvuruList = this.basvuruSer.basvuruList;
         this.kaydedilenList = this.basvuruSer.kaydedilenList;
-        console.log('ilanlistele didload çağrıldı');
+        //console.log('ilanlistele didload çağrıldı');
         this.ilanListele();
-        console.log('ionViewDidLoad SonucPage çağrıldı');
+        //console.log('ionViewDidLoad SonucPage çağrıldı');
         this.searchControl.valueChanges.debounceTime(700).subscribe(function (search) {
             _this.scrollEnable = true;
             _this.skip = 0;
             // this.infiniteScroll.enable(true);
-            console.log('ilanlistele searchkontrol çağrıldı');
+            //console.log('ilanlistele searchkontrol çağrıldı');
             _this.ilanListele();
-            console.log('searchkontrol çağrıldı');
+            //console.log('searchkontrol çağrıldı');
             // }
         });
         this.events.subscribe('ilan:filtered', function (a) {
@@ -126,7 +126,7 @@ var SonucPage = /** @class */ (function () {
                 _this.detayAra = {};
                 _this.sirala = '{}';
             }
-            console.log('ilanlistele filtre çağrıldı');
+            //console.log('ilanlistele filtre çağrıldı');
             _this.ilanListele();
         });
     };
@@ -137,7 +137,7 @@ var SonucPage = /** @class */ (function () {
         this.ilanSer.getIlanlar(this.searchTerm, this.detayAra, this.sirala, this.skip, this.limit)
             .then(function (ilanlar) {
             _this.ilanList = ilanlar;
-            console.log(_this.searchTerm);
+            //console.log(this.searchTerm);
             if (Object.keys(_this.ilanList).length <= 0) {
                 _this.isEmpty = true;
             }
@@ -146,7 +146,7 @@ var SonucPage = /** @class */ (function () {
     };
     SonucPage.prototype.itemTapped = function (ev, ilan) {
         // console.log(JSON.stringify(this.basvuruList)+'sonuc basvuru');
-        console.log(JSON.stringify(ilan) + 'ilan');
+        //console.log(JSON.stringify(ilan)+'ilan');
         this.navCtrl.push('DetayPage', {
             ilanId: ilan._id,
             basvurulist: this.basvuruSer.basvuruList,
@@ -154,30 +154,30 @@ var SonucPage = /** @class */ (function () {
         });
     };
     SonucPage.prototype.doInfinite = function (infiniteScroll) {
-        var _this = this;
-        console.log('Begin async operation');
+        //console.log('Begin async operation');
         // this.infiniteScroll = infiniteScroll;
         // infiniteScroll.enable(true);
         // infiniteScroll.enable(false);
+        var _this = this;
         setTimeout(function () {
             _this.skip = _this.skip + 1;
             _this.ilanSer.getIlanlar(_this.searchTerm, _this.detayAra, _this.sirala, _this.skip, _this.limit)
                 .then(function (ilanlar) {
-                console.log(JSON.stringify(ilanlar) + "ilanlar");
+                //console.log(JSON.stringify(ilanlar)+"ilanlar");
                 if (Object.keys(ilanlar).length < _this.limit) {
-                    console.log('true');
+                    //console.log('true');
                     // infiniteScroll.enable(false);
                     _this.scrollEnable = false;
                     ;
                 }
-                console.log('false');
+                //console.log('false');
                 // infiniteScroll.enable(true);
                 // this.scrollEnable = true;
                 for (var key in ilanlar) {
                     _this.ilanList.push(ilanlar[key]);
                 }
             });
-            console.log('Async operation has ended');
+            //console.log('Async operation has ended');
             infiniteScroll.complete();
         }, 500);
     };
@@ -227,7 +227,7 @@ var SonucPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 294:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -283,19 +283,19 @@ exports.Scheduler = Scheduler;
 
 /***/ }),
 
-/***/ 312:
+/***/ 295:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var Observable_1 = __webpack_require__(8);
-var debounceTime_1 = __webpack_require__(313);
+var debounceTime_1 = __webpack_require__(296);
 Observable_1.Observable.prototype.debounceTime = debounceTime_1.debounceTime;
 //# sourceMappingURL=debounceTime.js.map
 
 /***/ }),
 
-/***/ 313:
+/***/ 296:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -305,8 +305,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscriber_1 = __webpack_require__(33);
-var async_1 = __webpack_require__(317);
+var Subscriber_1 = __webpack_require__(31);
+var async_1 = __webpack_require__(300);
 /**
  * Emits a value from the source Observable only after a particular time span
  * has passed without another source emission.
@@ -418,7 +418,7 @@ function dispatchNext(subscriber) {
 
 /***/ }),
 
-/***/ 314:
+/***/ 297:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -428,7 +428,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Subscription_1 = __webpack_require__(38);
+var Subscription_1 = __webpack_require__(36);
 /**
  * A unit of work to be executed in a {@link Scheduler}. An action is typically
  * created from within a Scheduler and an RxJS user does not need to concern
@@ -469,7 +469,7 @@ exports.Action = Action;
 
 /***/ }),
 
-/***/ 315:
+/***/ 298:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -479,8 +479,8 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var root_1 = __webpack_require__(34);
-var Action_1 = __webpack_require__(314);
+var root_1 = __webpack_require__(32);
+var Action_1 = __webpack_require__(297);
 /**
  * We need this JSDoc comment for affecting ESDoc.
  * @ignore
@@ -618,7 +618,7 @@ exports.AsyncAction = AsyncAction;
 
 /***/ }),
 
-/***/ 316:
+/***/ 299:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -628,7 +628,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
-var Scheduler_1 = __webpack_require__(311);
+var Scheduler_1 = __webpack_require__(294);
 var AsyncScheduler = (function (_super) {
     __extends(AsyncScheduler, _super);
     function AsyncScheduler() {
@@ -676,13 +676,13 @@ exports.AsyncScheduler = AsyncScheduler;
 
 /***/ }),
 
-/***/ 317:
+/***/ 300:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var AsyncAction_1 = __webpack_require__(315);
-var AsyncScheduler_1 = __webpack_require__(316);
+var AsyncAction_1 = __webpack_require__(298);
+var AsyncScheduler_1 = __webpack_require__(299);
 /**
  *
  * Async Scheduler

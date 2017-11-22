@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 302:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OzgecmisPageModule", function() { return OzgecmisPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ozgecmis__ = __webpack_require__(307);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_date_pipe_module__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ozgecmis__ = __webpack_require__(290);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_date_pipe_module__ = __webpack_require__(292);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -44,21 +44,20 @@ var OzgecmisPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 307:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OzgecmisPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__ = __webpack_require__(220);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ozgecmis_ser__ = __webpack_require__(37);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_auth__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ozgecmis_detay_ozgecmis_detay__ = __webpack_require__(224);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(36);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_facebook__ = __webpack_require__(221);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_ozgecmis_ser__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_user_auth__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ozgecmis_detay_ozgecmis_detay__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__login_login__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_social_sharing__ = __webpack_require__(207);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,10 +75,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+// import { Facebook } from '@ionic-native/facebook';
 
 var OzgecmisPage = /** @class */ (function () {
-    function OzgecmisPage(navCtrl, navParams, ilanSer, ozgecmisSer, authService, alertCtrl, storage, events, actionSheetCtrl, face, plt, socialSharing) {
+    function OzgecmisPage(navCtrl, navParams, ilanSer, ozgecmisSer, authService, alertCtrl, storage, events, actionSheetCtrl, plt, socialSharing) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.ilanSer = ilanSer;
@@ -89,27 +88,26 @@ var OzgecmisPage = /** @class */ (function () {
         this.storage = storage;
         this.events = events;
         this.actionSheetCtrl = actionSheetCtrl;
-        this.face = face;
         this.plt = plt;
         this.socialSharing = socialSharing;
         // this.ozgecmis = ozgecmisSer.ozgecmis;
-        console.log('ionViewDidLoad OzgecmisPage const');
+        //console.log('ionViewDidLoad OzgecmisPage const');
     }
     OzgecmisPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         if (!this.authService.currentUser) {
-            console.log('ozgecmis checkauth');
+            //console.log('ozgecmis checkauth');
             this.authService.checkAuthentication().then(function (res) {
                 _this.ozgecmisSer.getOzgecmis(_this.authService.currentUser.ozgecmis)
                     .then(function (ozgecmis) { return _this.ozgecmis = ozgecmis; })
                     .catch(function (err) { });
             }, function (err) {
-                console.log('ozgecmis checkauth error');
+                //console.log('ozgecmis checkauth error');
                 _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_7__login_login__["a" /* LoginPage */]);
             });
         }
         else {
-            console.log('ionViewWillEnter OzgecmisPage const');
+            //console.log('ionViewWillEnter OzgecmisPage const');
             // this.storage.get('ozgecmis').then((ozgecmis) => {
             //   console.log("storage"+ JSON.stringify(ozgecmis));
             //   this.ozgecmis = ozgecmis;
@@ -140,17 +138,17 @@ var OzgecmisPage = /** @class */ (function () {
             Object.keys(this.ozgecmis.egitim).length < 1 || this.ozgecmis.egitim[0].okul == "" ||
             this.ozgecmis.isim === undefined || this.ozgecmis.isim.trim() == '' ||
             this.ozgecmis.adres === undefined || this.ozgecmis.adres.trim() == '')) {
-            console.log(JSON.stringify(this.ozgecmis.egitim) + 'egitim');
-            console.log(JSON.stringify(this.ozgecmis.tecrube) + 'tecrube');
+            //console.log(JSON.stringify(this.ozgecmis.egitim)+ 'egitim');
+            //console.log(JSON.stringify(this.ozgecmis.tecrube)+'tecrube');
             this.ozgecmis.enabled = false;
             ev.checked = false;
             this.presentAlert();
-            console.log(this.ozgecmis.enabled + 'after');
-            console.log(ev.checked + 'after');
+            //console.log(this.ozgecmis.enabled+'after');
+            //console.log(ev.checked+'after');
         }
         else {
             this.ozgecmisSer.updateOzgecmisAll(this.ozgecmis);
-            console.log(JSON.stringify(this.ozgecmis));
+            //console.log(JSON.stringify(this.ozgecmis));
         }
     };
     OzgecmisPage.prototype.shareFace = function () {
@@ -161,7 +159,7 @@ var OzgecmisPage = /** @class */ (function () {
         // 	description: "Much description"
         // 	// picture: this.ilan.resim
         // }
-        console.log("share face");
+        //console.log("share face");
         FB.ui({
             method: 'share',
             href: 'https://isgucvarisveren.herokuapp.com' + '/#/ilandetay/' + this.ozgecmis._id,
@@ -213,7 +211,7 @@ var OzgecmisPage = /** @class */ (function () {
                     role: 'cancel',
                     icon: 'close',
                     handler: function () {
-                        console.log('Cancel clicked');
+                        //console.log('Cancel clicked');
                     }
                 }
             ]
@@ -223,7 +221,7 @@ var OzgecmisPage = /** @class */ (function () {
     OzgecmisPage.prototype.share = function () {
         if (this.plt.is('ios') || this.plt.is('android')) {
             var options = {
-                message: "share this\n",
+                message: "İşgüçvar özgeçmişine bir göz atın:\n",
                 // subject: 'the subject', // fi. for email
                 // files: [this.ilan.resim], // an array of filenames either locally or remotely
                 url: 'https://isgucvarisveren.herokuapp.com' + '/#/ilandetay/' + this.ozgecmis._id,
@@ -233,10 +231,10 @@ var OzgecmisPage = /** @class */ (function () {
             // this.socialSharing.share('message', 'subject', this.ilan.resim, 'https://www.website.com/foo/#bar?a=b')
             this.socialSharing.shareWithOptions(options)
                 .then(function (result) {
-                console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
-                console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
+                //console.log("Share completed? " + result.completed); // On Android apps mostly return false even while it's true
+                //console.log("Shared to app: " + result.app); // On Android result.app is currently empty. On iOS it's empty when sharing is cancelled (result.completed=false)
             }).catch(function (msg) {
-                console.log("Sharing failed with message: " + msg);
+                //console.log("Sharing failed with message: " + msg);
             });
         }
         else
@@ -253,8 +251,8 @@ var OzgecmisPage = /** @class */ (function () {
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_ilan_ser__["a" /* IlanSer */], __WEBPACK_IMPORTED_MODULE_3__providers_ozgecmis_ser__["a" /* OzgecmisSer */], __WEBPACK_IMPORTED_MODULE_4__providers_user_auth__["a" /* UserAuth */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ActionSheetController */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_facebook__["a" /* Facebook */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_9__ionic_native_social_sharing__["a" /* SocialSharing */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */], __WEBPACK_IMPORTED_MODULE_8__ionic_native_social_sharing__["a" /* SocialSharing */]])
     ], OzgecmisPage);
     return OzgecmisPage;
 }());
@@ -263,13 +261,13 @@ var OzgecmisPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 309:
+/***/ 292:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DatePipeModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_pipe__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__date_pipe__ = __webpack_require__(293);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -300,7 +298,7 @@ var DatePipeModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 310:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
