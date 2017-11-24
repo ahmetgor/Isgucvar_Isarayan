@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 283:
+/***/ 282:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetayPageModule", function() { return DetayPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detay__ = __webpack_require__(289);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detay__ = __webpack_require__(288);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -41,7 +41,7 @@ var DetayPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 289:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -173,10 +173,13 @@ var DetayPage = /** @class */ (function () {
         return diff;
     };
     DetayPage.prototype.basvur = function (ilan) {
+        var _this = this;
         // console.log(ilan._id+'detay');
-        this.basvuruSer.addBasvuru(ilan._id);
+        this.basvuruSer.addBasvuru(ilan._id)
+            .then(function (ilan) {
+            _this.events.publish('basvur:update');
+        });
         // console.log(JSON.stringify(this.basvuruSer.basvuruList)+'create');
-        this.events.publish('basvur:update');
         //   // console.log( JSON.stringify(this.basvuruList.find((item) => {
         //       return (item.basvuru == ilanId ); })) + 'console')
         //
@@ -188,20 +191,26 @@ var DetayPage = /** @class */ (function () {
         //   else this.basvuruList.push({basvuru: ilanId, basvuruldu: 'Y', kaydedildi: 'N'});
     };
     DetayPage.prototype.deleteBasvur = function (ilan) {
+        var _this = this;
         // console.log(ilan._id+'detay');
-        this.basvuruSer.deleteBasvuru(ilan._id);
-        // console.log(JSON.stringify(this.basvuruSer.basvuruList)+'detay');
-        this.events.publish('basvur:update');
+        this.basvuruSer.deleteBasvuru(ilan._id)
+            .then(function (ilan) {
+            _this.events.publish('basvur:update');
+        });
     };
     DetayPage.prototype.kaydet = function (ilan) {
-        this.basvuruSer.addKaydedilen(ilan._id);
-        // console.log(JSON.stringify(this.basvuruSer.kaydedilenList)+'create');
-        this.events.publish('kaydet:update');
+        var _this = this;
+        this.basvuruSer.addKaydedilen(ilan._id)
+            .then(function (ilan) {
+            _this.events.publish('kaydet:update');
+        });
     };
     DetayPage.prototype.deleteKaydet = function (ilan) {
-        this.basvuruSer.deleteKaydedilen(ilan._id);
-        // console.log(JSON.stringify(this.basvuruSer.kaydedilenList)+'detay');
-        this.events.publish('kaydet:update');
+        var _this = this;
+        this.basvuruSer.deleteKaydedilen(ilan._id)
+            .then(function (ilan) {
+            _this.events.publish('kaydet:update');
+        });
     };
     DetayPage.prototype.checkBasvuru = function (ilanId) {
         // // console.log(JSON.stringify(this.basvuruList)+'detaylist');
